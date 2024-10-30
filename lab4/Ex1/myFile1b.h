@@ -31,7 +31,7 @@ Student::~Student() {
 
 }
 
-double Student::average() {
+double Student::average() { // Adds all grades of each course of a student and divides by the nubmer of courses
   double sum = 0;
   for (int i = 0; i < this -> nbCourses; i++) {
     sum += this -> List_grades[i];
@@ -39,7 +39,7 @@ double Student::average() {
   return  sum / nbCourses;
 }
 
-int Student::totalHours(){
+int Student::totalHours(){ //sums hours from each course for a student and retuns the total
   int sum = 0;
   for (int i = 0; i < this -> nbCourses; i++) {
     sum += this -> List_courses[i] -> getHours();
@@ -48,9 +48,9 @@ int Student::totalHours(){
 }
 
 bool Student::addCourse(Course *course, int grade) {
-  	if (this -> nbCourses >= this -> maxCourses) { cout << "Max number of courses reached" << endl; return 0;}
+  	if (this -> nbCourses >= this -> maxCourses) { cout << "Max number of courses reached" << endl; return false;}
     this -> List_courses[this -> nbCourses] = course;
     this -> List_grades[this -> nbCourses] = grade;
     this -> nbCourses++;
-    return 1;
+    return true;
 }
