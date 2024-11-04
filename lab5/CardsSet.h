@@ -12,3 +12,22 @@ private:
     Card set[52];
     int number;
 };
+
+void CardsSet::novSet() {
+    for (int i = 0; i < 52; i++) {
+
+    }
+}
+
+void CardsSet::shuffle() {
+    for(int j=0; j < 2; j++) {
+        for (Card & i : set) {
+            int r = rand() % 52;
+            swap(i, set[r]);
+        }
+    }
+}
+
+Card CardsSet::take() {
+    Card k = set[number];
+}

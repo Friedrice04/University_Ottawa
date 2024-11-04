@@ -21,3 +21,8 @@ Card::Card(color c, int v) {
     col = c;
     val = v;
 }
+
+void Card::write() {
+    cout << col << " " << val << endl;
+}
+
