@@ -1,3 +1,6 @@
+#include <cstdlib>
+#include <ctime>
+
 class CardsSet {
 public:
     CardsSet() : number(0) {}
@@ -14,8 +17,19 @@ private:
 };
 
 void CardsSet::novSet() {
-    for (int i = 0; i < 52; i++) {
-
+    int color = 0;
+    for(int i = 0; i < 52; i++) {
+        switch(color) {
+            case 0:
+                set[i] = Card(club, i%13);
+            case 1:
+                set[i] = Card(diamond, i%13);
+            case 2:
+                set[i] = Card(heart, i%13);
+            case 3:
+                set[i] = Card(spade, i%13);
+        }
+        color++;
     }
 }
 
@@ -29,5 +43,23 @@ void CardsSet::shuffle() {
 }
 
 Card CardsSet::take() {
-    Card k = set[number];
+    // int r = rand() % number;
+    // Card c = set[r];
+    // for(int i = r; i < number; i++) {
+    //     set[i] = set[i+1];
+    // }
+    number--;
+    return set[number-1];;
+
 }
+
+void CardsSet::put(Card k) {
+    set[number] = k;
+    number++;
+}
+
+Card CardsSet::lookIn(int no) {
+    if (no > number || no < 1) {cout << "Invalid card number" << endl; exit(1);}
+    return set[number-no];
+}
+

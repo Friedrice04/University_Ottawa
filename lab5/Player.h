@@ -9,3 +9,7 @@ private:
     const bool computer;
     int countPoints();
 };
+
+int Player::play() {
+    inHand.put(packet.take());
+}

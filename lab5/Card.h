@@ -23,6 +23,15 @@ Card::Card(color c, int v) {
 }
 
 void Card::write() {
-    cout << col << " " << val << endl;
+    switch(val) {
+        default:
+            cout << col << " " << val << endl;
+        case 11:
+            cout << col << " Jack" << endl;
+        case 12:
+            cout << col << " Queen" << endl;
+        case 13:
+            cout << col << " King" << endl;
+    }
 }
 
