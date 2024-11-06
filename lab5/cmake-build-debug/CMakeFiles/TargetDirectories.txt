@@ -1,3 +1,0 @@
-C:/Users/Hdowd/CLionProjects/University_Ottawa/lab5/cmake-build-debug/CMakeFiles/lab5.dir
-C:/Users/Hdowd/CLionProjects/University_Ottawa/lab5/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Hdowd/CLionProjects/University_Ottawa/lab5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

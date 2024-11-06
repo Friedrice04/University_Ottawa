@@ -18,16 +18,16 @@ private:
 
 void CardsSet::novSet() {
     int color = 0;
-    for(int i = 0; i < 52; i++) {
+    for(int i = 1; i < 53; i++) {
         switch(color) {
             case 0:
-                set[i] = Card(club, i%13);
+                set[i-1] = Card(club, i%13);
             case 1:
-                set[i] = Card(diamond, i%13);
+                set[i-1] = Card(diamond, i%13);
             case 2:
-                set[i] = Card(heart, i%13);
+                set[i-1] = Card(heart, i%13);
             case 3:
-                set[i] = Card(spade, i%13);
+                set[i-1] = Card(spade, i%13);
         }
         color++;
     }

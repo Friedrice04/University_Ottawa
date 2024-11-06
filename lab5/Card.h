@@ -12,6 +12,7 @@ public:
 private:
     color col;
     int val;
+    char* getColor(color c);
 };
 
 /*Constructor*/
@@ -23,15 +24,31 @@ Card::Card(color c, int v) {
 }
 
 void Card::write() {
+    char* colr = getColor(col);
     switch(val) {
         default:
-            cout << col << " " << val << endl;
+            cout << value() << " of " << colr << endl;
+        case 1:
+            cout << "Ace of " << colr << endl;
         case 11:
-            cout << col << " Jack" << endl;
+            cout << "Jack of " << colr << endl;
         case 12:
-            cout << col << " Queen" << endl;
+            cout << "Queen of " << colr << endl;
         case 13:
-            cout << col << " King" << endl;
+            cout << "King of " << colr << endl;
     }
 }
 
+char* Card::getColor(color c) {
+    switch (c) {
+        case club:
+            char car[] = "club";
+            return car[0]*;
+        case diamond:
+            return "diamond";
+        case heart:
+            return "heart";
+        case spade:
+            return "spade";
+    }
+}
